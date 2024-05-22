@@ -31,3 +31,19 @@ export const deleteTodo = async (req, res) => {
 		msg: "deleted successful",
 	});
 };
+
+export const getTodo = async (req, res) => {
+	const { id } = req.params;
+
+	const todo = await Todo.findById(id);
+
+	if (!todo) {
+		return res.status(404).json({
+			msg: "Todo not found",
+		});
+	}
+
+	res.status(200).json({
+		data: todo,
+	});
+};
