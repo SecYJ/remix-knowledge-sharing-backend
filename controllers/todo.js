@@ -47,3 +47,15 @@ export const getTodo = async (req, res) => {
 		data: todo,
 	});
 };
+
+export const updateTodo = async (req, res) => {
+	const { id } = req.params;
+	const { firstName, lastName } = req.body;
+
+	console.log(firstName, lastName);
+
+	// const todo = await Todo.findByIdAndUpdate(id);
+	res.status(200).json({
+		msg: "updated",
+	});
+};

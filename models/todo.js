@@ -1,12 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const TodoSchema = new Schema({
-	firstName: {
-		type: String,
-	},
-	lastName: {
-		type: String,
-	},
+	username: String
 });
 
 export const Todo = model("Todo", TodoSchema);
