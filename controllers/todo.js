@@ -9,11 +9,10 @@ export const getTodos = async (req, res) => {
 };
 
 export const createTodo = async (req, res) => {
-	const { firstName, lastName } = req.body;
+	const { username } = req.body;
 
 	const newTodo = new Todo({
-		firstName,
-		lastName,
+		username,
 	});
 	await newTodo.save();
 
