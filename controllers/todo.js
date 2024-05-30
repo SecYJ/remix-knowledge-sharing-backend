@@ -9,6 +9,10 @@ export const getTodos = async (req, res) => {
 };
 
 export const createTodo = async (req, res) => {
+	req.on("aborted", () => {
+		console.log("aborted");
+	});
+
 	const { username } = req.body;
 
 	const newTodo = new Todo({
